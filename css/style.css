@@ -1,96 +1,575 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --grey: #f0f0f0;
+  --black: #000000;
+  --white: #ffffff;
+  --green: #28d979;
+  --hashtag-green: #149063;
+  --hashtag-white: #ebf9f2;
+  --email: #dddddd;
+  --role: #5c5c5c;
+  --company: #3f3d3d;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  font-size: 62.5%;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-#app {
-  max-width: 1280px;
+.container {
+  width: min(90%, 1000px);
   margin: 0 auto;
-  padding: 2rem;
+  padding: 20px 15px;
+}
+
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+section > div,
+aside {
+  background-color: var(--grey);
+  border-radius: 12px;
+  padding: 1.2rem;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+#img-and-name {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.profile-img {
+  width: 48%;
+  max-width: 160px;
+  height: auto;
+}
+
+.nameBox {
+  width: 48%;
+  background-color: var(--grey);
+  padding: 1.2rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.greetingPhrase {
+  font-size: 1rem;
+  line-height: 150%;
+}
+
+.name {
+  font-size: 1.2rem;
+  line-height: 150%;
+}
+
+.role {
+  font-size: 0.8rem;
+  color: var(--role);
+}
+
+.languagesBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 1.2rem;
+  border-radius: 12px;
+  background-color: var(--grey);
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.languages-and-progresses {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: space-between;
+}
+
+.listLanguages,
+.progress-bars {
+  display: flex;
+  flex: 2;
+  flex-grow: none;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+p {
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+}
+
+.progress-bars {
+  flex: 5;
+  gap: 0.5rem;
+}
+
+.progressBar {
+  width: 100%;
+  height: 1rem;
+  border-radius: 3px;
+  background-color: var(--green);
+}
+
+.hindi {
+  width: 80%;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 12px;
+}
+
+.duration {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.7rem;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.position {
+  font-size: 1.1rem;
+}
+
+.company-latest {
+  color: var(--hashtag-white);
+}
+
+.company {
+  color: var(--company);
+}
+
+li {
+  font-size: 0.9rem;
+  margin: 0 0 0 10px;
+}
+
+#experience-and-tools {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.all-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.tool-icons {
+  width: 30px;
+}
+
+.stack {
+  background-color: var(--white);
+  padding: 10px;
+  width: min(150px, 80%);
+  border-radius: 6px;
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.stack-design {
+  padding-top: 20px;
+}
+
+.stack-ai {
+  padding-top: 20px;
+}
+
+.education-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+  width: 100%;
+  gap: 1rem;
+}
+
+.education-item {
+  width: min(320px, 100%);
+}
+
+.duration,
+.hashtags {
+  font-size: 1rem;
+}
+
+.education-name {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.institution {
+  font-size: 1.1rem;
+  padding-top: 10px;
+}
+
+#education-and-interests {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hashtag-white {
+  color: var(--hashtag-white);
+  line-height: 25px;
+}
+
+.hashtag-green {
+  color: var(--hashtag-green);
+  line-height: 25px;
+}
+
+.experience-item,
+.education-item {
+  border-radius: 10px;
+  padding: 15px;
+  background-color: var(--white);
+}
+
+.latest {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+.interests-and-cta {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent !important;
+  gap: 20px;
+}
+
+.interests-list {
+  display: flex;
+  margin-top: 12px;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.interest-item {
+  font-size: 0.9rem;
+  padding: 8px 14px;
+  border-radius: 40px;
+  background-color: var(--white);
+  width: fit-content;
+  display: inline-block;
+}
+
+.cta {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.duration {
+  display: flex;
+  padding-bottom: 7px;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  gap: 10px;
+}
+
+.most-recent {
+  color: #ddf163;
+  background: #7e731266;
+  padding: 3px 7px;
+  border-radius: 59px;
+}
+
+.position,
+.education-name,
+.education-item .duration {
+  font-size: 20px;
+  font-weight: 500;
+  font-style: normal;
+  margin-bottom: 2px;
+}
+
+.left {
+  flex: 3;
+}
+
+.right {
+  flex: 5;
+}
+
+.all-tools .tag {
+  color: var(--white);
+  background-color: transparent !important;
+  border-radius: 59px;
+  padding: 3px 7px;
+  position: absolute;
+  width: 120%;
+  z-index: 100;
+  left: -14px;
+  top: -15px;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
-}
-
-.card {
-  padding: 2em;
+.all-tools .tag > span {
+  background-color: var(--black);
+  font-size: 0.6rem;
+  border-radius: 59px;
+  display: block;
+  line-height: 10px;
+  margin: 0 auto;
+  width: fit-content;
+  padding: 5px 7px;
+  position: static !important;
 }
 
-.read-the-docs {
-  color: #888;
+#email {
+  color: var(--email);
+  word-wrap: break-word;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.emoji {
+  width: 20px;
+  height: auto;
+}
+
+#downloadButton {
+  background-color: var(--green);
+  color: var(--white);
+  padding: 10px 30px;
+  border-radius: 30px;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.2rem;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  border: 2px solid var(--white);
+  margin-block: 20px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media print {
+  .no-print {
+    display: none;
   }
-  a:hover {
-    color: #747bff;
+}
+
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background: rgba(0, 0, 0, 0.3);
+  transform: scale(0);
+  animation: ripple-animation 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+  }
+  .languagesBox,
+  #img-and-name {
+    width: 50%;
+  }
+  #img-and-name {
+    gap: 20px;
+  }
+  #img-and-name > * {
+    width: 50%;
+  }
+  #experience-and-tools,
+  #education-and-interests {
+    flex-direction: row;
+  }
+  .experience {
+    width: 80%;
+  }
+  .duration {
+    font-size: 150%;
+  }
+  .tools {
+    width: 20%;
+  }
+  .education,
+  .interests-and-cta {
+    width: 50%;
+  }
+  .education-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: unset;
+    flex-wrap: wrap;
+  }
+  .education-item {
+    width: min(190px, 100%);
+  }
+  .all-tools {
+    justify-content: center;
+  }
+  .stack {
+    justify-content: center;
+  }
+  .stack-code {
+    padding-top: 20px;
+  }
+  .about {
+    flex-direction: row;
   }
 }

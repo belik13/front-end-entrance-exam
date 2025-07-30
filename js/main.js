@@ -1,24 +1,79 @@
-import '../css/style.css'
-import javascriptLogo from '../javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+function debounce(func, wait) {
+  let timeout;
+  return function (...args) {
+    const context = this;
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(context, args), wait);
+  };
+}
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+document.addEventListener("DOMContentLoaded", () => {
+  const textElements = document.querySelectorAll(
+    "h1, h2, h3, h4, h5, h6, p, span, li, a"
+  );
 
-setupCounter(document.querySelector('#counter'))
+  textElements.forEach((element) => {
+    if (element.getAttribute("data-id")) {
+      const id = element.getAttribute("data-id");
+      element.setAttribute("data-id", id);
+
+      const savedContent = localStorage.getItem(id);
+      if (savedContent) {
+        element.innerHTML = savedContent;
+      }
+
+      element.setAttribute("contenteditable", "true");
+
+      const saveContent = () => {
+        localStorage.setItem(id, element.innerHTML);
+        createRipple(element);
+      };
+
+      const debouncedSaveContent = debounce(saveContent, 1000);
+
+      element.addEventListener("input", debouncedSaveContent);
+
+      element.addEventListener("blur", () => {
+        saveContent();
+      });
+
+      element.classList.add("ripple");
+    }
+  });
+});
+
+function createRipple(element) {
+  const ripple = document.createElement("div");
+  ripple.className = "ripple-effect";
+  ripple.style.left = "50%";
+  ripple.style.top = "50%";
+  element.appendChild(ripple);
+
+  ripple.addEventListener("animationend", () => {
+    ripple.remove();
+  });
+}
+
+function removeRippleEffects() {
+  document.querySelectorAll(".ripple-effect").forEach((ripple) => {
+    ripple.remove();
+  });
+}
+
+function downloadPDF() {
+  removeRippleEffects();
+
+  const opt = {
+    filename: "resume.pdf",
+    image: { type: "jpeg", quality: 1 },
+    html2canvas: { scale: 2, windowWidth: 794, width: 794, height: 2200 },
+  };
+
+  html2pdf().set(opt).from(document.body).save();
+}
+
+document
+  .querySelector("#downloadButton")
+  .addEventListener("click", function () {
+    downloadPDF();
+  });

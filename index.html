@@ -1,13 +1,234 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="./js/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"
+    integrity="sha512-YcsIPGdhPK4P/uRW6/sruonlYj+Q7UHWeKfTAkBW+g83NKM+jMJFJ4iAPfSnVp7BKD4dKMHmVSvICUbE/V1sSw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+  <div class="container">
+    <section>
+      <header>
+        <div id="img-and-name">
+          <img class="profile-img" src="./public/assets/png/image.png" alt="Profile Image">
+          <div class="nameBox">
+            <p data-id="greetingPhrase" class="poppins-medium greetingPhrase">Hello 👋🏻 I'm</p>
+            <div class="yourInfo">
+              <h1 data-id="name" class="name poppins-semibold">Karthik SR</h1>
+              <h3 data-id="role" class="role poppins-medium">UI/UX Designer</h3>
+            </div>
+          </div>
+        </div>
+        <div class="languagesBox">
+          <h2 data-id="languages-title" class="title">Languages</h2>
+          <div class="languages-and-progresses">
+            <div class="listLanguages">
+              <p data-id="language1" class="poppins-medium nameLanguage">English</p>
+              <p data-id="language2" class="poppins-medium nameLanguage">Malayalam</p>
+              <p data-id="language3" class="poppins-medium nameLanguage">Hindi</p>
+            </div>
+            <div class="progress-bars">
+              <div class="english progressBar"></div>
+              <div class="malayalam progressBar"></div>
+              <div class="hindi progressBar"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </section>
+    <section id="experience-and-tools">
+      <div class="experience">
+        <div class="experience-header">
+          <h2 data-id="experience-title" class="poppins-medium title">Experience</h2>
+        </div>
+        <div class="experience-list">
+          <div class="experience-item latest">
+            <div class="duration">
+              <p data-id="duration1">Jun 2023 - Present</p>
+              <span data-id="most-recent-exp" class="most-recent">most recent</span>
+            </div>
+            <div class="about">
+              <div class="left">
+                <h3 data-id="position1" class="position">Marketing Manager</h3>
+                <p data-id="company1" class="company-latest">Pankayam | Full-time</p>
+              </div>
+              <div class="right poppins-regular">
+                <ul>
+                  <li data-id="job1-point1">
+                    Strategy development and planning of campaigns that
+                    promote the business and generate genuine traffic
+                  </li>
+                  <li data-id="job1-point2">
+                    SEO Content Creation for Blogs, Website, Social media
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="experience-item">
+            <div class="duration"><p data-id="duration2">2017 - Present</p></div>
+            <div class="about">
+              <div class="left">
+                <h3 data-id="position2" class="position">Graphic / Web designer</h3>
+                <p data-id="company2">Freelance</p>
+              </div>
+              <div class="right poppins-regular">
+                <ul>
+                  <li data-id="job2-point1">
+                    Development of internal projects from scratch, product design of brands
+                  </li>
+                  <li data-id="job2-point2">
+                    Landing page, webapps and hybrid apps
+                  </li>
+                  <li data-id="job2-point3">
+                    Coordinating with outside agencies, art services, web designer, marketing, printers, and colleagues
+                    as necessary.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="experience-item">
+            <div class="duration"><p data-id="duration3">Sep. 2021 - June 2023</p></div>
+            <div class="about">
+              <div class="left">
+                <h3 data-id="position3" class="position">Legal Assistant</h3>
+                <p data-id="company3">Law Firm | Intern</p>
+              </div>
+              <div class="right poppins-regular">
+                <ul>
+                  <li data-id="job3-point1">
+                    Provide administrative support to lawyer and enhance
+                    office effectiveness
+                  <li data-id="job3-point2">Handle communication with clients, witnesses etc.</li>
+                  </li>
+                  <li data-id="job3-point3">
+                    repare case briefs and summarize depositions,
+                    interrogatories and testimony
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <aside class="tools">
+        <h3 data-id="tools-title" class="poppins-medium title">Tools</h3>
+        <div class="all-tools">
+          <div class="stack stack-design">
+            <span data-id="tag-design" class="tag design"><span>design</span></span>
+            <img src="public/assets/svg/figma.svg" class="tool-icons" alt="Figma">
+            <img src="public/assets/svg/ps.svg" class="tool-icons" alt="PhotoShop">
+            <img src="public/assets/svg/ai.svg" class="tool-icons" alt="Illustrator">
+            <img src="public/assets/svg/pr.svg" class="tool-icons" alt="Figma">
+            <img src="public/assets/svg/notion.svg" class="tool-icons" alt="Notion">
+            <img src="public/assets/svg/meet.svg" class="tool-icons" alt="Meet">
+          </div>
+          <div class="stack stack-code">
+            <span data-id="tag-no-code" class="tag no-code"><span>no-code</span></span>
+            <img src="public/assets/svg/zapier.svg" class="tool-icons" alt="Zapier">
+            <img src="public/assets/svg/webflow.svg" class="tool-icons" alt="Webflow">
+            <img src="public/assets/svg/framer.svg" class="tool-icons" alt="Framer">
+            <img src="public/assets/svg/wordpress.svg" class="tool-icons" alt="WordPress">
+          </div>
+          <div class="stack stack-ai">
+            <span data-id="tag-ai" class="tag ai"><span>artificial intelligence</span></span>
+            <img src="public/assets/svg/gpt.svg" class="tool-icons" alt="GPT">
+            <img src="public/assets/svg/copilot.svg" class="tool-icons" alt="Copilot">
+            <img src="public/assets/svg/midjourney.svg" class="tool-icons" alt="Midjourney">
+          </div>
+        </div>
+      </aside>
+    </section>
+    <section id="education-and-interests">
+      <div class="education">
+        <div class="education-header">
+          <h2 data-id="education-title" class="poppins-medium title">Education</h2>
+        </div>
+        <div class="education-list">
+          <div class="education-item latest">
+            <div class="duration">
+              <span data-id="education1-duration">2023</span>
+              <img src="public/assets/svg/heart.svg" class="emoji" alt="Yellow Heart">
+            </div>
+            <div class="education-about">
+              <h3 data-id="education1-title" class="education-name">UI/UX</h3>
+              <span class="hashtags hashtag-white">
+                <span data-id="education1-tag1">#UX</span> <span data-id="education1-tag2">#UI</span> <span data-id="education1-tag3">#research</span>  <br>
+                <span data-id="education1-tag4">#DesignSystem</span> <span data-id="education1-tag5">#Ui</span> <br>
+                <span data-id="education1-tag6">#wireframing</span> <span data-id="education1-tag7">#figma</span><br>
+                <span data-id="education1-tag8">#Ux</span>
+              </span>
+            </div>
+            <p data-id="education1-institution" class="institution">Coursera</p>
+          </div>
+          <div class="education-item">
+            <span data-id="education2-duration" class="duration">2017 - 2022</span>
+            <div class="education-about">
+              <h3 data-id="education2-title" class="education-name">Law</h3>
+              <span class="hashtags hashtag-green">
+                <span data-id="education2-tag1">#law</span> <span data-id="education2-tag2">#legalStudies</span> <span data-id="education2-tag3">#contracts</span> <br>
+                <span data-id="education2-tag4">#internationalLaws</span> <br>
+              </span>
+            </div>
+            <p data-id="education2-institution" class="institution">University of Kerala</p>
+          </div>
+          <div class="education-item">
+            <span data-id="education3-duration" class="duration">2017</span>
+            <div class="education-about">
+              <h3 data-id="education3-title" class="education-name">Graphic design</h3>
+              <span class="hashtags hashtag-green">
+                <span data-id="education3-tag1">#branding</span> <span data-id="education3-tag2">#web</span> <br>
+                <span data-id="education3-tag3">#illustration</span> <span data-id="education3-tag4">#adobe</span> <br>
+              </span>
+            </div>
+            <p data-id="education3-institution" class="institution">Coursera</p>
+          </div>
+        </div>
+      </div>
+      <section class="interests-and-cta">
+        <div class="interests">
+          <div class="interests-header">
+            <h2 data-id="interests-title" class="poppins-medium title">Interests</h2>
+          </div>
+          <div class="interests-list">
+            <span data-id="interest1" class="interest-item"> branding </span>
+            <span data-id="interest2" class="interest-item"> design </span>
+            <span data-id="interest3" class="interest-item"> photography </span>
+            <span data-id="interest4" class="interest-item"> artificial intelligence </span>
+            <span data-id="interest5" class="interest-item"> illustration </span>
+            <span data-id="interest6" class="interest-item"> typography </span>
+            <span data-id="interest7" class="interest-item"> social networks </span>
+            <span data-id="interest8" class="interest-item"> research </span>
+            <span data-id="interest9" class="interest-item"> dron pilot </span>
+            <span data-id="interest10" class="interest-item"> games </span>
+          </div>
+        </div>
+        <div class="cta">
+          <h2 data-id="cta-title" class="poppins-medium title">
+            Let's chat! I'm ready to work on excinting projects
+          </h2>
+          <p data-id="email" id="email">srkarthik.designscape@gmail.com</p>
+        </div>
+      </section>
+    </section>
+  </div>
+
+  <footer data-html2canvas-ignore class="no-print">
+    <button id="downloadButton">
+      Скачать
+    </button>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+
 </html>
